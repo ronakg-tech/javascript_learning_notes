@@ -1,0 +1,43 @@
+# JavaScript Notes 🚀
+
+```javascript
+// ❓ what is javascript?
+// Javascript is a high level scripting language that is used to create dynamic and interactive web pages.It can run on both client side(browser) and server side using node.js.
+
+// ❓ what is high level language?
+// A high level language is a programming language that is easy for humans to read,write and understand.It is closer to human language and far from machine language.
+
+// ❓ what is scripting language?
+// A scripting language is a language that :
+// 1.executes line by line
+// 2.does not need compilation first
+// 3.usually runs inside another program.
+
+// ❓ history of javascript
+// javascript was created by Brendan Eich in 1995 while he was working at Netscape communications corporation.
+//  MOCHA-LIVESCRIPT-JAVASCRIPT
+// In 1997,ecmascript was created to standardize javascript and ensure that it works across different browsers and platforms.
+
+
+// ❓ features of javascript
+// dynamic type
+// Interpreted Language
+// Lightweight 
+// cross platform
+
+
+// ❓ how javascript works and run?
+// The browser sends javascript code into the javascript engine(like V8(program in c++) in chrome)
+//(parsing) The engine reads the code and check the syntax and convert it into Abstract syntax tree(AST)
+// The engine compiles the code using just in time(JIT) compiler and convert it into machine code
+// The machine code is executed by the computer's processor and the output is displayed on the browser.
+
+// ❓ Javascript runtime environment
+// node.js is a javascript runtime environment  which consists of a V8 js engine, Nodejs(API), core modules,event loop ,callback queue and the library which enables asynchronous and non-blocking operations.
+
+// ❓ Non-blocking 
+// A non-blocking operation allows a program to execute tasks without waiting for the current operation to finish
+
+// ❓ Asynchronous operations
+// Asynchronous means a task runs in the background while the program continues execution..
+```
