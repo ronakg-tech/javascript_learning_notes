@@ -1,0 +1,171 @@
+what is variable in javascript?
+javascript is a container used to store data values.
+It allows a program to store,update and reuse data.
+
+let name = "Ronak";
+name → variable
+"Ronak" → value stored in the variable
+
+why do we use variables??
+varibles are used to store information,perform calculation,reuse values.
+
+Ways to Declare Variables
+In JavaScript we declare variables using 3 keywords:
+var
+let
+const
+
+
+var age = 22;
+
+Features-----
+Function scoped
+Can be redeclared
+Can be updated
+Hoisted
+
+let age = 22;
+
+Features
+Block scoped
+Cannot be redeclared
+Can be updated
+Hoisted but in Temporal Dead Zone
+
+const pi = 3.14;
+
+Features
+Block scoped
+Cannot redeclare
+Cannot update
+Must initialize immediately
+
+
+Hoisting------
+Hoisting means JavaScript moves variable declarations to the top before execution.
+
+console.log(a);
+var a = 10;
+
+output:undefined
+
+Because JS internally does this:
+var a;
+console.log(a);
+a = 10;
+
+
+Temporal Dead Zone (TDZ) is the time between variable declaration and variable initialization where the variable cannot be accessed.
+It mainly applies to:
+let
+const
+
+During this period, if you try to use the variable, JavaScript throws an error.
+
+console.log(a);
+let a = 10;
+ReferenceError: Cannot access 'a' before initialization
+
+
+Variable Naming Rules
+
+A variable name can contain
+
+letters
+numbers
+_
+$
+
+let userName = "Ronak";
+let age1 = 22;
+let $price = 100;
+
+
+❌ Not allowed
+let 1name = "Ronak"
+let my name = "Ronak"
+let let = 10
+
+JavaScript is Dynamically Typed
+In JavaScript you don't need to define the data type.
+let x = 10;
+x = "hello";
+x = true;
+
+Variable Scope
+Scope means where a variable can be accessed.
+
+1.Global Scope
+Accessible everywhere.
+
+var a = 10;
+function test(){
+console.log(a);
+}
+
+2.Block Scope
+Accessible only inside { }
+let a = 10;
+
+{
+let b = 20;
+}
+
+console.log(a);
+
+
+
+Variable Copying-----
+let a = 5;
+let b = a;
+a = 20;
+console.log(b);
+
+
+Variables with Objects and Arrays-------
+const cannot be reassigned but objects can still change.
+const arr = [1,2,3];
+arr.push(4);
+console.log(arr);
+
+output:[1,2,3,4]
+
+
+JavaScript Execution Context-----
+
+When JavaScript runs a program, it first creates something called an Execution Context.
+Execution Context = Environment where JavaScript code runs.
+It has two phases:
+
+1️⃣ Memory Creation Phase
+2️⃣ Code Execution Phase
+
+var a = 10;
+var b = 20;
+
+function sum(){
+    var c = a + b;
+    console.log(c);
+}
+sum();
+
+Phase 1 — Memory Creation Phase
+JavaScript scans the code and allocates memory.
+
+Phase 2 — Code Execution Phase
+Now code executes line by line.
+
+Scope Chain------------
+
+Scope determines where variables can be accessed.
+There are 3 scopes in JavaScript:
+
+1️⃣ Global scope
+2️⃣ Function scope
+3️⃣ Block scope
+
+JavaScript Memory Model------------
+JavaScript stores variables in two types of memory.
+
+1️⃣ Stack Memory
+2️⃣ Heap Memory
