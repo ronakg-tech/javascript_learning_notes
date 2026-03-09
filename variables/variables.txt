@@ -1,110 +1,199 @@
-what is variable in javascript?
-javascript is a container used to store data values.
-It allows a program to store,update and reuse data.
+# 📦 JavaScript Variables
 
+## 🧠 What is a Variable in JavaScript?
+
+A variable in JavaScript is a container used to store data values.  
+It allows a program to store, update and reuse data.
+
+```javascript
 let name = "Ronak";
-name → variable
+```
+
+name → variable  
 "Ronak" → value stored in the variable
 
-why do we use variables??
-varibles are used to store information,perform calculation,reuse values.
+---
 
-Ways to Declare Variables
+# ❓ Why Do We Use Variables?
+
+Variables are used to:
+
+• store information  
+• perform calculations  
+• reuse values  
+
+---
+
+# 🛠 Ways to Declare Variables
+
 In JavaScript we declare variables using 3 keywords:
+
+```
 var
 let
 const
+```
 
+---
 
+# 🔹 var
+
+```javascript
 var age = 22;
+```
 
-Features-----
-Function scoped
-Can be redeclared
-Can be updated
-Hoisted
+Features
 
+• Function scoped  
+• Can be redeclared  
+• Can be updated  
+• Hoisted  
+
+---
+
+# 🔹 let
+
+```javascript
 let age = 22;
+```
 
 Features
-Block scoped
-Cannot be redeclared
-Can be updated
-Hoisted but in Temporal Dead Zone
 
+• Block scoped  
+• Cannot be redeclared  
+• Can be updated  
+• Hoisted but in Temporal Dead Zone  
+
+---
+
+# 🔹 const
+
+```javascript
 const pi = 3.14;
+```
 
 Features
-Block scoped
-Cannot redeclare
-Cannot update
-Must initialize immediately
 
+• Block scoped  
+• Cannot redeclare  
+• Cannot update  
+• Must initialize immediately  
 
-Hoisting------
+---
+
+# ⬆ Hoisting
+
 Hoisting means JavaScript moves variable declarations to the top before execution.
 
+```javascript
 console.log(a);
 var a = 10;
+```
 
-output:undefined
+Output
 
-Because JS internally does this:
+```
+undefined
+```
+
+Because JavaScript internally does this:
+
+```javascript
 var a;
 console.log(a);
 a = 10;
+```
 
+---
+
+# ⚠ Temporal Dead Zone (TDZ)
 
 Temporal Dead Zone (TDZ) is the time between variable declaration and variable initialization where the variable cannot be accessed.
+
 It mainly applies to:
+
+```
 let
 const
+```
 
 During this period, if you try to use the variable, JavaScript throws an error.
 
+```javascript
 console.log(a);
 let a = 10;
+```
+
+```
 ReferenceError: Cannot access 'a' before initialization
+```
 
+---
 
-Variable Naming Rules
+# 📝 Variable Naming Rules
 
 A variable name can contain
 
+```
 letters
 numbers
 _
 $
+```
 
+```javascript
 let userName = "Ronak";
 let age1 = 22;
 let $price = 100;
-
+```
 
 ❌ Not allowed
+
+```javascript
 let 1name = "Ronak"
 let my name = "Ronak"
 let let = 10
+```
 
-JavaScript is Dynamically Typed
+---
+
+# ⚡ JavaScript is Dynamically Typed
+
 In JavaScript you don't need to define the data type.
+
+```javascript
 let x = 10;
 x = "hello";
 x = true;
+```
 
-Variable Scope
+---
+
+# 🌍 Variable Scope
+
 Scope means where a variable can be accessed.
 
-1.Global Scope
+---
+
+## 1️⃣ Global Scope
+
 Accessible everywhere.
 
+```javascript
 var a = 10;
+
 function test(){
 console.log(a);
 }
+```
 
-2.Block Scope
+---
+
+## 2️⃣ Block Scope
+
 Accessible only inside { }
+
+```javascript
 let a = 10;
 
 {
@@ -112,34 +201,57 @@ let b = 20;
 }
 
 console.log(a);
+```
 
+---
 
+# 🔁 Variable Copying
 
-Variable Copying-----
+```javascript
 let a = 5;
 let b = a;
+
 a = 20;
+
 console.log(b);
+```
 
+---
 
-Variables with Objects and Arrays-------
+# 📚 Variables with Objects and Arrays
+
 const cannot be reassigned but objects can still change.
+
+```javascript
 const arr = [1,2,3];
+
 arr.push(4);
+
 console.log(arr);
+```
 
-output:[1,2,3,4]
+Output
 
+```
+[1,2,3,4]
+```
 
-JavaScript Execution Context-----
+---
+
+# ⚙ JavaScript Execution Context
 
 When JavaScript runs a program, it first creates something called an Execution Context.
+
 Execution Context = Environment where JavaScript code runs.
+
 It has two phases:
 
+```
 1️⃣ Memory Creation Phase
 2️⃣ Code Execution Phase
+```
 
+```javascript
 var a = 10;
 var b = 20;
 
@@ -147,25 +259,39 @@ function sum(){
     var c = a + b;
     console.log(c);
 }
+
 sum();
+```
 
 Phase 1 — Memory Creation Phase
+
 JavaScript scans the code and allocates memory.
 
 Phase 2 — Code Execution Phase
+
 Now code executes line by line.
 
-Scope Chain------------
+---
+
+# 🔗 Scope Chain
 
 Scope determines where variables can be accessed.
+
 There are 3 scopes in JavaScript:
 
+```
 1️⃣ Global scope
 2️⃣ Function scope
 3️⃣ Block scope
+```
 
-JavaScript Memory Model------------
+---
+
+# 💾 JavaScript Memory Model
+
 JavaScript stores variables in two types of memory.
 
+```
 1️⃣ Stack Memory
 2️⃣ Heap Memory
+```

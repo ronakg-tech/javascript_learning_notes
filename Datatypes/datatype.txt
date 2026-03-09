@@ -1,350 +1,597 @@
-Datatypes-----A datatypes define what kind of value of a variable can store and how the javascript engine treats that value in memory and operation.
-Javascript is a dynamically typed language ,do not need to declare the data type expicitly. javascript engine automatically determine the type based on the assigned value.
+📦 JavaScript Data Types
 
+🧠 What is a Data Type?
+A data type defines what kind of value a variable can store and how the JavaScript engine treats that value in memory and operations.
 
-Categories of JavaScript Data Types------------
-JavaScript data types are divided into two main categories:
+JavaScript is a dynamically typed language, so we do not need to declare the data type explicitly.  
+The JavaScript engine automatically determines the type based on the assigned value.
 
-1.Primitive Data Types----Primitive data types are basic data types that store a single value.
+---
+
+📂 Categories of JavaScript Data Types
+
+JavaScript data types are divided into two main categories.
+
+1️⃣ Primitive Data Types
+Primitive data types are basic data types that store a single value.  
 They are immutable (their value cannot be changed directly).
+
 JavaScript has 7 primitive data types.
-(stack memory)
-1. Number
-2. String
-3. Boolean
-4. Undefined
-5. Null
-6. BigInt
-7. Symbol
 
-2.Non-primitive Data types---Non-primitive data types store collections of data and are stored by reference in memory.
+📍 Stored in Stack Memory
+
+1. Number  
+2. String  
+3. Boolean  
+4. Undefined  
+5. Null  
+6. BigInt  
+7. Symbol  
+
+---
+
+2️⃣ Non-Primitive (Reference) Data Types
+Non-primitive data types store collections of data and are stored by reference in memory.
+
+📍 Stored in Heap Memory
+
 Main types include:
-(heap memory)
-1. Object
-2. Array
-3. Function
 
+1. Object  
+2. Array  
+3. Function  
 
-1.Number----
+---
+
+🔢 1. Number
+
 The Number data type is used to represent numeric values.
+
 JavaScript does not distinguish between integers and floating-point numbers. Both are treated as numbers.
------
+
+```javascript
 let age = 22;
 let price = 99.99;
 let temperature = -10;
-console.log(typeof age);--------number
 
-Special numeric values----Infinity
+console.log(typeof age); // number
+```
 
+⭐ Special Numeric Value — Infinity
+
+```javascript
 let value = 10 / 0;
 console.log(value);
+```
 
-Output:Infinity
-JavaScript also supports special numeric values:
+Output
 
-2. String--------
+```
+Infinity
+```
+
+---
+
+🔤 2. String
+
 A String represents textual data.
+
 Strings can be written using:
-1.Double quotes " "
-2.Single quotes ' '
-3.Backticks ` ` (template literals)
-------
+
+1. Double quotes " "
+2. Single quotes ' '
+3. Backticks ` ` (template literals)
+
+```javascript
 let name = "Ronak";
 let city = 'Gwalior';
 let message = `Hello Ronak`;
-console.log(typeof name);-------------String
 
-Template Literals----
+console.log(typeof name); // string
+```
+
+✨ Template Literals
+
 Backticks allow string interpolation.
 
-Example:
+```javascript
 let name = "Ronak";
 let age = 22;
+
 console.log(`My name is ${name} and I am ${age} years old`);
+```
 
+---
 
-3. Boolean------------
+✅ 3. Boolean
+
 The Boolean data type represents logical values.
+
 It has only two values:
-1.true
-2.false
--------
+
+1. true  
+2. false  
+
+```javascript
 let isLoggedIn = true;
 let isAdmin = false;
+
 console.log(typeof isLoggedIn);
---------
+```
+
+```javascript
 let age = 20;
-console.log(age > 18);-----------true
+console.log(age > 18); // true
+```
 
+---
 
-4.Undefined-----A variable is undefined when it has been declared but not assigned a value.
+❓ 4. Undefined
 
-Example:
+A variable is undefined when it has been declared but not assigned a value.
+
+```javascript
 let x;
-console.log(x);---------undefined
-------
+
+console.log(x); // undefined
+```
+
+```javascript
 console.log(typeof x);
-Output:undefined
+```
 
+Output
 
-5. Null---------
-null represents an intentional absence of value.
+```
+undefined
+```
+
+---
+
+🚫 5. Null
+
+null represents an intentional absence of value.  
 It means the variable has no value assigned deliberately.
-------
-let data = null;
-console.log(data);
 
-Important JavaScript behavior
-console.log(typeof null);----------------object
+```javascript
+let data = null;
+
+console.log(data);
+```
+
+⚠ Important JavaScript Behavior
+
+```javascript
+console.log(typeof null); // object
+```
 
 This is a historical bug in JavaScript, but it still exists.
 
+---
 
-
-BigInt----------
+🔢 6. BigInt
 
 The BigInt data type is used to represent very large integers that cannot be stored in the normal number range.
+
+```javascript
 let bigNumber = 123456789012345678901234567890n;
+```
+
 The n at the end indicates a BigInt value.
-------
-console.log(typeof bigNumber);------bigint
 
+```javascript
+console.log(typeof bigNumber); // bigint
+```
 
+---
 
-7. Symbol--------------
-A Symbol represents a unique and immutable value.
+🔑 7. Symbol
+
+A Symbol represents a unique and immutable value.  
 Symbols are mainly used as unique object property keys.
------------
+
+```javascript
 let id = Symbol("id");
 let anotherId = Symbol("id");
+
 console.log(id === anotherId);
------
+```
+
+Output
+
+```
 false
+```
+
 Even if the description is the same, every Symbol is unique.
 
+---
 
-1. Object-----------
+🧱 1. Object
+
 An Object stores key-value pairs.
----------
+
+```javascript
 let student = {
   name: "Ronak",
   age: 22,
   course: "MCA"
 };
 
-console.log(student.name);----------Ronak(typeof ----object)
+console.log(student.name); // Ronak
+```
+
+```
+typeof student // object
+```
 
 Objects are used to represent real-world entities.
 
-Example:-----------
-user
-product
-order
-student
+Example:
 
-2. Array-------An Array stores multiple values in a single variable.
--------
+- user  
+- product  
+- order  
+- student  
+
+---
+
+📚 2. Array
+
+An Array stores multiple values in a single variable.
+
+```javascript
 let numbers = [10, 20, 30, 40];
-console.log(numbers[0]);---------(typeof ------object(because in other languages array used only one type values but in js any type of values stored in a variable))
---------
+
+console.log(numbers[0]);
+```
+
+Output
+
+```
 10
+```
+
+```
+typeof numbers // object
+```
 
 Arrays are useful for storing:
 
-lists
-collections
-grouped data
---------
-let fruits = ["apple", "banana", "mango"];
+- lists  
+- collections  
+- grouped data  
 
-3. Function-------A Function is a reusable block of code used to perform a task.
---------
+Example:
+
+```javascript
+let fruits = ["apple", "banana", "mango"];
+```
+
+---
+
+⚙ 3. Function
+
+A Function is a reusable block of code used to perform a task.
+
+```javascript
 function greet() {
   console.log("Hello World");
 }
+
 greet();
+```
+
 In JavaScript, functions are treated as objects.
--------
-console.log(typeof greet);
-function
 
-typeof Operator
+```javascript
+console.log(typeof greet); // function
+```
+
+---
+
+🔍 typeof Operator
+
 JavaScript provides the typeof operator to check the data type of a value.
---------------------------------------------
-console.log(typeof 10);          // number
-console.log(typeof "hello");     // string
-console.log(typeof true);        // boolean
-console.log(typeof undefined);   // undefined
-console.log(typeof null);        // object
 
+```javascript
+console.log(typeof 10);        // number
+console.log(typeof "hello");   // string
+console.log(typeof true);      // boolean
+console.log(typeof undefined); // undefined
+console.log(typeof null);      // object
+```
 
+---
 
+🧩 Primitive vs Reference Data Types
 
-Primitive vs Reference Data Types------------------------
-This is one of the most important JavaScript concepts.
+Primitive
 
-Primitive--------
 Primitive values store the actual value directly in memory.
+
+```javascript
 let a = 10;
 let b = a;
+
 b = 20;
+
 console.log(a); // 10
+```
 
-Reference------
-Reference types store the memory address instead of the actual value
+---
+
+Reference
+
+Reference types store the memory address instead of the actual value.
+
+```javascript
 let obj1 = { name: "Ronak" };
+
 let obj2 = obj1;
+
 obj2.name = "Riya";
-console.log(obj1.name);-Riya
 
-Type Conversion------
+console.log(obj1.name); // Riya
+```
+
+---
+
+🔄 Type Conversion
+
 Type conversion means changing one data type into another manually.
+
+```javascript
 let num = "10";
+
 let converted = Number(num);
-console.log(converted);-----10
 
+console.log(converted); // 10
+```
 
-Type Coercion-----
+---
+
+⚡ Type Coercion
+
 Type coercion means JavaScript automatically converts types during operations.
-console.log("5" + 2);--------52
 
-Truthy and Falsy Values------------
+```javascript
+console.log("5" + 2); // 52
+```
+
+---
+
+🔎 Truthy and Falsy Values
+
 In JavaScript, every value is either truthy or falsy.
 
-1.Falsy values------------
-Only 6 values are falsy:
+❌ Falsy values
+
+```
 false
 0
 ""
 null
 undefined
 NaN
+```
 
-2.Truthy values---------
-Everything else is truthy.
--------
+✅ Truthy values
+
+```
 "hello"
 1
 []
 {}
 true
+```
 
+---
 
-Equality Operators-------
+⚖ Equality Operators
+
 JavaScript has two comparison operators.
 
-1.Loose Equality (==)------------
+1️⃣ Loose Equality (==)
+
 Compares values after type conversion.
--------
+
+```javascript
 console.log(5 == "5");
+```
+
+Output
+
+```
 true
+```
 
+---
 
-2.Strict Equality (===)
+2️⃣ Strict Equality (===)
+
 Compares both value and data type.
---------
-console.log(5 === "5");-----------false
 
-Shallow Copy
+```javascript
+console.log(5 === "5");
+```
 
-Definition
+Output
+
+```
+false
+```
+
+---
+
+📄 Shallow Copy
+
 A shallow copy creates a new object or array but copies only the first level of properties.
-If there are nested objects or arrays, their references are copied, not the actual values.
 
+```javascript
 let obj1 = {
   name: "Ronak",
   address: { city: "Gwalior" }
 };
-let obj2 = { ...obj1 }; // shallow copy
+
+let obj2 = { ...obj1 };
+
 obj2.address.city = "Delhi";
-console.log(obj1.address.city);----------------Delhi
 
+console.log(obj1.address.city); // Delhi
+```
 
-Deep Copy-----------
-A deep copy creates a completely independent copy of the object, including all nested objects and arrays.
-------
+---
+
+📑 Deep Copy
+
+A deep copy creates a completely independent copy of the object.
+
+```javascript
 let obj1 = {
   name: "Ronak",
   address: { city: "Gwalior" }
 };
-let obj2 = JSON.parse(JSON.stringify(obj1)); // deep copy
+
+let obj2 = JSON.parse(JSON.stringify(obj1));
+
 obj2.address.city = "Delhi";
-console.log(obj1.address.city);--------Gwalior
 
+console.log(obj1.address.city); // Gwalior
+```
 
-1. Convert String → Number
+---
+
+🔄 Type Conversion Methods
+
+1️⃣ Convert String → Number
 
 Method 1: Number()
+
+```javascript
 let str = "123";
 let num = Number(str);
 
-console.log(num); 
+console.log(num);
 console.log(typeof num);
-------123
-number
+```
 
-Method 2: parseInt() (for integers)
+Output
+
+```
+123
+number
+```
+
+Method 2: parseInt()
+
+```javascript
 let str = "45";
 let num = parseInt(str);
 
-console.log(num);-----45
+console.log(num);
+```
 
+```
+45
+```
 
+```javascript
 let str = "45px";
-console.log(parseInt(str));----45
+console.log(parseInt(str)); // 45
+```
 
-Method 3: parseFloat() (for decimals)
+Method 3: parseFloat()
+
+```javascript
 let str = "12.75";
 let num = parseFloat(str);
 
-console.log(num);--------12.75
+console.log(num);
+```
 
+```
+12.75
+```
 
 Method 4: Unary + Operator
+
+```javascript
 let str = "50";
 let num = +str;
 
-console.log(num);-----50
+console.log(num);
+```
 
+```
+50
+```
 
+---
 
-2. Convert Number → String
+2️⃣ Convert Number → String
+
 Method 1: String()
+
+```javascript
 let num = 100;
 
 let str = String(num);
 
 console.log(str);
-console.log(typeof str);-------"100"
-------
+console.log(typeof str);
+```
+
+Output
+
+```
 "100"
 string
+```
 
+```javascript
+let str = 5;
 
-let str=5;
-console.log(typeof (str +" "));-------string
+console.log(typeof (str + ""));
+```
 
+```
+string
+```
 
-3. Convert to Boolean
+---
+
+3️⃣ Convert to Boolean
+
 Using Boolean()
+
+```
 Boolean(1)        // true
 Boolean(0)        // false
 Boolean("")       // false
 Boolean("hello")  // true
 Boolean(null)     // false
+```
 
+Example
 
+```javascript
 let value = 1;
+
 let result = Boolean(value);
-console.log(result);-----------true
 
+console.log(result); // true
+```
 
+More conversions
+
+```
 Number(true)   // 1
 Number(false)  // 0
 
 String(true)   // "true"
 String(false)  // "false"
 
-
 Boolean(0)   // false
 Boolean(10)  // true
+```
